@@ -26,4 +26,9 @@ public class empData {
         this.employee = employee;
     }
     
+    public employeeData add(){
+        employeeData newdata = new employeeData();
+        employee.add(newdata);
+        return newdata;
+    }
 }
