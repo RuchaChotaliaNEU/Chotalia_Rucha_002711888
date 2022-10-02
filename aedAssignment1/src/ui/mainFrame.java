@@ -4,6 +4,8 @@
  */
 package ui;
 
+import model.empData;
+
 /**
  *
  * @author Rucha Chotalia
@@ -13,9 +15,10 @@ public class mainFrame extends javax.swing.JFrame {
     /**
      * Creates new form mainFrame
      */
+    empData history;
     public mainFrame() {
         initComponents();
-        
+        history=new empData();  
     }
 
     /**
@@ -104,7 +107,7 @@ public class mainFrame extends javax.swing.JFrame {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        createPanel create = new createPanel();
+        createPanel create = new createPanel(history);
         SplitPane.setRightComponent(create);
     }//GEN-LAST:event_btnCreateActionPerformed
 

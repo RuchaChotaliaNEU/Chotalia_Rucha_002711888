@@ -5,30 +5,28 @@
 package model;
 
 import java.util.ArrayList;
-
-/** 
- *
- * @author Rucha Chotalia
- */
+ 
 public class empData {
-    private ArrayList<employeeData> employee;
+    private ArrayList<employeeData> history;
     
     public empData() {
-        this.employee= new ArrayList<employeeData>();
-        
+        this.history= new ArrayList<employeeData>();
     }
 
-    public ArrayList<employeeData> getEmployee() {
-        return employee;
+    public ArrayList<employeeData> getHistory() {
+        return history;
     }
 
-    public void setEmployee(ArrayList<employeeData> employee) {
-        this.employee = employee;
+    public void setHistory(ArrayList<employeeData> history) {
+        this.history = history;
     }
-    
+
+   
     public employeeData add(){
         employeeData newdata = new employeeData();
-        employee.add(newdata);
+        history.add(newdata);
         return newdata;
     }
+
+    
 }
