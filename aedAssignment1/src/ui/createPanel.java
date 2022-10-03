@@ -4,6 +4,8 @@
  */
 package ui;
 
+import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import model.empData;
@@ -92,6 +94,17 @@ public class createPanel extends javax.swing.JPanel {
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
+            }
+        });
+
+        txtMobile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMobileActionPerformed(evt);
+            }
+        });
+        txtMobile.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtMobileKeyReleased(evt);
             }
         });
 
@@ -267,6 +280,43 @@ public class createPanel extends javax.swing.JPanel {
     private void txtTeaminfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTeaminfoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTeaminfoActionPerformed
+
+    private void txtMobileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMobileActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMobileActionPerformed
+
+    private void txtMobileKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMobileKeyReleased
+        // TODO add your handling code here:
+        String MobileNO = txtMobile.getText();
+        int length = MobileNO.length();
+        char h = evt.getKeyChar();
+        
+        if(evt.getKeyChar()>='0' && evt.getKeyChar()<='9'){
+            if(length<10){
+                txtMobile.setEditable(true);
+            }
+            else{
+                txtMobile.setEditable(false);
+            }
+            
+        }
+        
+        else{
+            if(evt.getExtendedKeyCode() == KeyEvent.VK_BACK_SPACE || evt.getExtendedKeyCode()== KeyEvent.VK_DELETE){
+                txtMobile.setEditable(true);
+            }
+            else{
+                txtMobile.setEditable(false);
+            }
+        }
+        
+        if(MobileNO.matches("^[0-9]*$") && MobileNO.length()==10 ){
+            txtMobile.setBackground(Color.GREEN);
+        }
+        else{
+            txtMobile.setBackground(Color.PINK);
+        }
+    }//GEN-LAST:event_txtMobileKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
