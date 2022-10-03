@@ -6,7 +6,9 @@ package ui;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.text.SimpleDateFormat;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import model.empData;
 import model.employeeData;
@@ -21,6 +23,7 @@ public class createPanel extends javax.swing.JPanel {
      * Creates new form createPanel
      */
     empData history;
+//    String filePath=null;
     
     public createPanel(empData history) {
         initComponents();
@@ -133,7 +136,7 @@ public class createPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(207, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnRegister, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRegister, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblMobile, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
@@ -147,7 +150,7 @@ public class createPanel extends javax.swing.JPanel {
                             .addComponent(lblAge, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                             .addComponent(lblName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(txtTeaminfo, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPosition, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtLevel, javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,9 +212,9 @@ public class createPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txtStartdate, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(11, 11, 11)))
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {lblAge, lblEmail, lblGender, lblId, lblLevel, lblMobile, lblName, lblPosition, lblStartdate, lblTeaminfo});
@@ -245,6 +248,7 @@ public class createPanel extends javax.swing.JPanel {
         String Gender = txtGender.getText();
         SimpleDateFormat d = new SimpleDateFormat("MM-dd-yyyy");
         String Startdate= d.format(txtStartdate.getDate());
+//        String path= filePath;
         
         
         employeeData ed = history.add();
@@ -342,4 +346,24 @@ public class createPanel extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser txtStartdate;
     private javax.swing.JTextField txtTeaminfo;
     // End of variables declaration//GEN-END:variables
+
+//    public String retrieveImage(){
+//        JFileChooser j = new JFileChooser();
+//        j.showOpenDialog(null);
+//        File file = j.getSelectedFile();
+//        String path = file.getAbsolutePath();
+//        return path;
+//}
+
+
+
+
+
+
 }
+
+
+
+
+
+

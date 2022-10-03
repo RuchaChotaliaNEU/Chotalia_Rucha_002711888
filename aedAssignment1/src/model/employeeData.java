@@ -19,6 +19,15 @@ public class employeeData {
     private String email;
     private int mobileno;
     private String currentDate;
+    private String Photo;
+
+    public String getPhoto() {
+        return Photo;
+    }
+
+    public void setPhoto(String Photo) {
+        this.Photo = Photo;
+    }
 
     public String getCurrentDate() {
         return currentDate;
