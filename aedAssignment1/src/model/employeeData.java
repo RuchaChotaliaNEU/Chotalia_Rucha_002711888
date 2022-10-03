@@ -4,8 +4,6 @@
  */
 package model;
 
-import java.util.Date;
-
 /**
  *
  * @author Rucha Chotalia
@@ -101,8 +99,12 @@ public class employeeData {
     public void setMobileno(int mobileno) {
         this.mobileno = mobileno;
     }
+    
 
-  
+  @Override
+  public String toString(){
+    return name;
+}
     
     
 }

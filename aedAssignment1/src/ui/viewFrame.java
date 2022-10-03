@@ -144,6 +144,11 @@ public class viewFrame extends javax.swing.JPanel {
         });
 
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -309,6 +314,37 @@ public class viewFrame extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = viewTable.getSelectedRow();
+        
+        
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Row Not Selected");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) viewTable.getModel();
+        employeeData selectedColumns= (employeeData) model.getValueAt(selectedRowIndex, 0);
+                                                                
+        history.deleteColumns(selectedColumns);  
+        
+        JOptionPane.showMessageDialog(this, "Employee Details Deleted.");
+        
+        populateTable();
+        
+        textName.setText("");
+        txtId.setText("");
+        txtAge.setText("");
+        txtStartdate.setText("");
+        txtGender.setText("");
+        txtLevel.setText("");
+        txtTeaminfo.setText("");
+        txtPosition.setText("");
+        txtMobileno.setText("");
+        txtEmail.setText("");
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
@@ -346,7 +382,7 @@ public class viewFrame extends javax.swing.JPanel {
         
         for(employeeData ed: history.getHistory()){
            Object[] row = new Object[10];
-           row[0] = ed.getName();
+           row[0] = ed;
            row[1] = ed.getIdnumber();
            row[2]= ed.getGender();
            row[3] = ed.getAge();

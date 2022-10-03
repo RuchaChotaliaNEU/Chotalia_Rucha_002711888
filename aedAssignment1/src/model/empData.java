@@ -27,6 +27,10 @@ public class empData {
         history.add(newdata);
         return newdata;
     }
-
     
+    public void deleteColumns(employeeData ed) {
+    history.remove(ed);
+    }
 }
+    
+
