@@ -20,7 +20,15 @@ public class employeeData {
     private String postion;
     private String email;
     private int mobileno;
-    private Date currentDate;
+    private String currentDate;
+
+    public String getCurrentDate() {
+        return currentDate;
+    }
+
+    public void setCurrentDate(String currentDate) {
+        this.currentDate = currentDate;
+    }
 
     public String getName() {
         return name;
@@ -94,13 +102,7 @@ public class employeeData {
         this.mobileno = mobileno;
     }
 
-    public Date getCurrentDate() {
-        return currentDate;
-    }
-
-    public void setCurrentDate(Date currentDate) {
-        this.currentDate = currentDate;
-    }
+  
     
     
 }
