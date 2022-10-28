@@ -22,7 +22,7 @@ public class stringVerifier extends InputVerifier{
         if (text.length() > 0) {
             if (text.toLowerCase().startsWith(" ") || text.length() == 0 ||
                     text.matches(pattern) != true) {
-                input.setBackground(Color.RED);
+                input.setBackground(Color.pink);
                 JOptionPane.showMessageDialog(input, "Please enter valid string."
                         + " Special characters are not allowed", "Error", JOptionPane.ERROR_MESSAGE);
                 return false;

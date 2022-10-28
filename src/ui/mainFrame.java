@@ -31,7 +31,7 @@ public class mainFrame extends javax.swing.JFrame {
         persondirectoryBtn = new javax.swing.JButton();
         pateintdirectoryBtn = new javax.swing.JButton();
         dashboardBtn = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        userProcessContainer = new javax.swing.JPanel();
         loginasLbl = new javax.swing.JLabel();
         adminComBox = new javax.swing.JComboBox<>();
         usenameLbl = new javax.swing.JLabel();
@@ -89,46 +89,46 @@ public class mainFrame extends javax.swing.JFrame {
 
         loginBtn.setText("Login");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout userProcessContainerLayout = new javax.swing.GroupLayout(userProcessContainer);
+        userProcessContainer.setLayout(userProcessContainerLayout);
+        userProcessContainerLayout.setHorizontalGroup(
+            userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userProcessContainerLayout.createSequentialGroup()
+                .addGroup(userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(userProcessContainerLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(usenameLbl)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(userProcessContainerLayout.createSequentialGroup()
                                 .addComponent(passwordLbl)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(userProcessContainerLayout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addComponent(loginBtn))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(userProcessContainerLayout.createSequentialGroup()
                                         .addGap(26, 26, 26)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(adminComBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(userProcessContainerLayout.createSequentialGroup()
                         .addGap(134, 134, 134)
                         .addComponent(loginasLbl)))
                 .addContainerGap(295, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        userProcessContainerLayout.setVerticalGroup(
+            userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(userProcessContainerLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(loginasLbl)
                 .addGap(27, 27, 27)
                 .addComponent(adminComBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(usenameLbl)
                     .addComponent(usernameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(userProcessContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordLbl)
                     .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
@@ -136,7 +136,7 @@ public class mainFrame extends javax.swing.JFrame {
                 .addContainerGap(141, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setRightComponent(jPanel2);
+        jSplitPane1.setRightComponent(userProcessContainer);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,7 +198,6 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> adminComBox;
     private javax.swing.JButton dashboardBtn;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JButton loginBtn;
     private javax.swing.JLabel loginasLbl;
@@ -207,6 +206,7 @@ public class mainFrame extends javax.swing.JFrame {
     private javax.swing.JButton pateintdirectoryBtn;
     private javax.swing.JButton persondirectoryBtn;
     private javax.swing.JLabel usenameLbl;
+    private javax.swing.JPanel userProcessContainer;
     private javax.swing.JTextField usernameTxt;
     // End of variables declaration//GEN-END:variables
 }
