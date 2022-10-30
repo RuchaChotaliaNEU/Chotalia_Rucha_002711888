@@ -1,21 +1,25 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
+
 package model;
 
 /**
  *
  * @author ruchachotalia
  */
-public class person {
-  
-    
+public class Person {
     private String personName;
     private int age;
     private Patient patient;
     private int weight;
-    private int height;
+    private String community;
+    private String address;
+    private String city;
+    private boolean hasVitalSigns;
+    private String userType;
     private String hospital;
 
     public String getHospital() {
@@ -25,47 +29,38 @@ public class person {
     public void setHospital(String hospital) {
         this.hospital = hospital;
     }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-    private String community;
-    private String address;
-    private String city;
-
-    public String getPersonName() {
-        return personName;
-    }
-
-    public void setPersonName(String personName) {
-        this.personName = personName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
+    
+    
     public int getWeight() {
         return weight;
     }
 
     public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+    
+    
+    public boolean hasVitalSigns() {
+        return hasVitalSigns;
+    }
+
+    public void setHasVitalSigns(boolean hasVitalSigns) {
+        this.hasVitalSigns = hasVitalSigns;
+    }
+
+    public int getweight() {
+        return weight;
+    }
+
+    public void setweight(int weight) {
         this.weight = weight;
     }
 
@@ -92,14 +87,34 @@ public class person {
     public void setCity(String city) {
         this.city = city;
     }
-
-    public boolean isHasVitalSigns() {
-        return hasVitalSigns;
-    }
-
-    public void setHasVitalSigns(boolean hasVitalSigns) {
-        this.hasVitalSigns = hasVitalSigns;
-    }
-    private boolean hasVitalSigns;
     
+    public String getPersonName() {
+        return personName;
+    }
+    
+    public void setPersonName(String personName) {
+        this.personName = personName;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+    
+    public void setAge(int age) {
+        this.age = age;
+    }
+    
+    public Patient getPatient() {
+        return patient;
+    }
+    
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return this.personName;
+    }
 }

@@ -1,4 +1,3 @@
-
 package model;
 
 import java.util.ArrayList;
@@ -7,35 +6,36 @@ import java.util.ArrayList;
  *
  * @author ruchachotalia
  */
-public class personDirectory {
-    private ArrayList<person> PersonDirectory;
+public class PersonDirectory {
     
-    public personDirectory() {
-        PersonDirectory = new ArrayList<>();
+    private ArrayList<Person> personDirectory;
+    
+    public PersonDirectory() {
+        personDirectory = new ArrayList<>();
     }
     
-    public ArrayList<person> getPersonHistory() {
-        return PersonDirectory;
+    public ArrayList<Person> getPersonHistory() {
+        return personDirectory;
     }
     
-    public void setPersonHistory(ArrayList<person> personHistory) {
-        this.PersonDirectory = personHistory;
+    public void setPersonHistory(ArrayList<Person> personHistory) {
+        this.personDirectory = personHistory;
     }
     
-    public person createAndAddPerson() {
-        person person = new person();
-        PersonDirectory.add(person);
+    public Person createAndAddPerson() {
+        Person person = new Person();
+        personDirectory.add(person);
         return person;
     }
     
-    public void deletePerson(person person) {
-        PersonDirectory.remove(person);
+    public void deletePerson(Person person) {
+        personDirectory.remove(person);
     }
     
-    public ArrayList<person> searchPatient(String key)
+    public ArrayList<Person> searchPatient(String key)
     {
-        ArrayList<person> searchPatientDirectory = new ArrayList();
-        for(person person: PersonDirectory)
+        ArrayList<Person> searchPatientDirectory = new ArrayList();
+        for(Person person: personDirectory)
         {
             if(person.getPersonName().toLowerCase().startsWith(key.toLowerCase()))
             {
@@ -48,10 +48,10 @@ public class personDirectory {
         return searchPatientDirectory;
     }
     
-    public ArrayList<person> searchPerson(String key)
+    public ArrayList<Person> searchPerson(String key)
     {
-        ArrayList<person> searchPersonDirectory = new ArrayList();
-        for(person person: PersonDirectory)
+        ArrayList<Person> searchPersonDirectory = new ArrayList();
+        for(Person person: personDirectory)
         {
             if(person.getPersonName().toLowerCase().startsWith(key.toLowerCase()))
             {
@@ -60,4 +60,6 @@ public class personDirectory {
         }
         return searchPersonDirectory;
     }
+    
+    
 }
