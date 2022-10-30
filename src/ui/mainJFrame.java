@@ -38,6 +38,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnEncounter.setVisible(false);
         btnDirectory.setVisible(false);
         btnLogin.setEnabled(true);
+        btnLogout.setVisible(false);
     }
     
     /**
@@ -57,6 +58,7 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnEncounter = new javax.swing.JButton();
         btnDirectory = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         userProcessContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
@@ -66,7 +68,7 @@ public class MainJFrame extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         txtUsername = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(142, 211, 203));
@@ -122,6 +124,14 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnLogout.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout leftJPanelLayout = new javax.swing.GroupLayout(leftJPanel);
         leftJPanel.setLayout(leftJPanelLayout);
         leftJPanelLayout.setHorizontalGroup(
@@ -132,14 +142,14 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
             .addGroup(leftJPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(btnEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnDirectory, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                    .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         leftJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDashboard, btnDirectory, btnEncounter});
@@ -159,7 +169,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnEncounter)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDirectory)
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLogout)
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(leftJPanel);
@@ -205,9 +217,8 @@ public class MainJFrame extends javax.swing.JFrame {
         });
         jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 312, 200, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
-        jLabel2.setPreferredSize(new java.awt.Dimension(300, 300));
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -780, 2380, 2530));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, 1720, 1080));
 
         userProcessContainer.add(jPanel1, "card2");
 
@@ -252,7 +263,7 @@ public class MainJFrame extends javax.swing.JFrame {
         btnEncounter.setVisible(false);
         btnDirectory.setVisible(false);
         btnLogin.setEnabled(true);
-        
+        btnLogout.setVisible(false);
         
          if (userType.getSelectedItem().toString() == "Person Login") {
             txtPassword.setEnabled(false);
@@ -285,6 +296,7 @@ public class MainJFrame extends javax.swing.JFrame {
             jLabel1.setVisible(true);
             managePersonsJButton.setVisible(true);
             user = "Person";
+            btnLogout.setVisible(true);
         } 
             
             
@@ -300,6 +312,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnEncounter.setVisible(true);
                 btnDirectory.setVisible(true);
                 user = "System";
+                btnLogout.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect credential");
             }
@@ -318,6 +331,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnDirectory.setVisible(true);
                 
                 user = "Hospital";
+                btnLogout.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect credential");
             }
@@ -337,6 +351,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 patientManagerJButton.setEnabled(false);
                 btnEncounter.setVisible(false);
                 btnDirectory.setVisible(false);
+                btnLogout.setVisible(true);
 
                 VitalSignReportJPanel report = new VitalSignReportJPanel(userProcessContainer, personDirectory);
         userProcessContainer.add("report",report);
@@ -361,6 +376,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnEncounter.setVisible(true);
                 patientManagerJButton.setEnabled(true);
                 btnDirectory.setVisible(true);
+                btnLogout.setVisible(true);
                  
              }  
              else {
@@ -384,6 +400,13 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout layout=(CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnDirectoryActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.first(userProcessContainer);
+    }//GEN-LAST:event_btnLogoutActionPerformed
     
     /**
      * @param args the command line arguments
@@ -425,8 +448,9 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnDirectory;
     private javax.swing.JButton btnEncounter;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblPassword;

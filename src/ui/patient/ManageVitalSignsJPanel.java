@@ -142,7 +142,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
         searchBoxJTextField = new javax.swing.JTextField();
         searchPatientJButton = new javax.swing.JButton();
         refreshPatientsJButton = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
         bgLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -281,19 +280,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
             }
         });
         add(refreshPatientsJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 228, 123, -1));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 383, Short.MAX_VALUE)
-        );
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 129, -1, -1));
 
         bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
         add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -210, 1690, 1200));
@@ -514,7 +500,6 @@ public class ManageVitalSignsJPanel extends javax.swing.JPanel {
     private javax.swing.JButton deleteVitalSignJButton;
     private javax.swing.JButton displayDetailsJButton;
     private javax.swing.JButton editVitalSignsJButton;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton refreshPatientsJButton;

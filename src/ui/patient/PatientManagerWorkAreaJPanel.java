@@ -40,7 +40,6 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
 
         managePatientsJButton = new javax.swing.JButton();
         manageVitalSignsJButton = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         bgLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -66,15 +65,6 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(manageVitalSignsJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 200, -1, -1));
 
-        btnLogout.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
-        btnLogout.setText("Logout");
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 246, 143, -1));
-
         bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
         add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -210, 1690, 1200));
     }// </editor-fold>//GEN-END:initComponents
@@ -97,17 +87,9 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_manageVitalSignsJButtonActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnLogoutActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bgLbl;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JButton managePatientsJButton;
     private javax.swing.JButton manageVitalSignsJButton;
     // End of variables declaration//GEN-END:variables
