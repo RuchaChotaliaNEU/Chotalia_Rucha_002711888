@@ -4,6 +4,17 @@
  */
 package ui.patient;
 
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.InputVerifier;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import model.Patient;
+import model.person;
+import model.personDirectory;
+import model.stringVerifier;
+
 /**
  *
  * @author ruchachotalia
@@ -13,10 +24,48 @@ public class managePatient extends javax.swing.JPanel {
     /**
      * Creates new form managePatient
      */
-    public managePatient() {
+    private JPanel userProcessContainer;
+    private personDirectory personDirectory;
+    public managePatient (JPanel userProcessContainer1, personDirectory personDirectory) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.personDirectory= personDirectory;
+        ArrayList<person> personList = personDirectory.getPersonHistory();
+        populatePatientsTable(personList);
+        InputVerifier stringVerifier = new stringVerifier();
+        //ssearchBoxJTextField.setInputVerifier(stringVerifier);
     }
 
+    
+    private void populatePatientsTable(ArrayList<person> personList) {
+        DefaultTableModel model = (DefaultTableModel) patientTable.getModel();
+        model.setRowCount(0);
+        if(personList.isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "No Persons found. Please add Persons",
+                    "Warning", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        for (person person : personList) {
+            Object[] row = new Object[4];
+            row[0] = person.getPatient();
+            row[1]= person.getPersonName();
+            row[2]= person.getAge();
+            row[3] =person.getCommunity();
+            row[4] = person.getHospital();
+            
+            if(person.getPatient()!=null)
+            {
+                row[2] = person.getPatient().getPatientID();
+            }
+            else
+            {
+                row[2] = "Not a patient";
+            }
+            
+            model.addRow(row);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,26 +91,51 @@ public class managePatient extends javax.swing.JPanel {
 
         patientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Patient ID", "Patient Name", "Age", "Locality"
+                "Patient ID", "Patient Name", "Age", "Hospital", "Locality"
             }
         ));
         jScrollPane1.setViewportView(patientTable);
 
         managepatientcreateBtn.setText("Create");
+        managepatientcreateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managepatientcreateBtnActionPerformed(evt);
+            }
+        });
 
         managepatienteditBtn.setText("Edit");
+        managepatienteditBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managepatienteditBtnActionPerformed(evt);
+            }
+        });
 
         managepatientviewBtn.setText("View");
+        managepatientviewBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managepatientviewBtnActionPerformed(evt);
+            }
+        });
 
         managepatientdeleteBtn.setText("Delete");
+        managepatientdeleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managepatientdeleteBtnActionPerformed(evt);
+            }
+        });
 
         managepatientbackBtn.setText("<<Back");
+        managepatientbackBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managepatientbackBtnActionPerformed(evt);
+            }
+        });
 
         managepatientrefreshBtn.setText("Refresh");
         managepatientrefreshBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +144,18 @@ public class managePatient extends javax.swing.JPanel {
             }
         });
 
+        managepatientsearchTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managepatientsearchTxtActionPerformed(evt);
+            }
+        });
+
         managepatientsearchBtn.setText("Search");
+        managepatientsearchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                managepatientsearchBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -134,7 +219,142 @@ public class managePatient extends javax.swing.JPanel {
 
     private void managepatientrefreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatientrefreshBtnActionPerformed
         // TODO add your handling code here:
+         managepatientsearchTxt.setText("");
+        populatePatientsTable(personDirectory.getPersonHistory());
     }//GEN-LAST:event_managepatientrefreshBtnActionPerformed
+
+    private void managepatientcreateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatientcreateBtnActionPerformed
+        // TODO add your handling code here:
+         int selectedRow= patientTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                    "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        person person=(person) patientTable.getValueAt(selectedRow, 0);
+        if(person.getPatient()!=null)
+        {
+            JOptionPane.showMessageDialog(this, "Paient already exists.","Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        createPatient cpJPanel= new createPatient(userProcessContainer, person);
+        userProcessContainer.add("cpJPanel", cpJPanel);
+        CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_managepatientcreateBtnActionPerformed
+
+    
+    
+    
+    
+    
+    
+    private void managepatienteditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatienteditBtnActionPerformed
+        // TODO add your handling code here:
+         int selectedRow= patientTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                    "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        person person=(person) patientTable.getValueAt(selectedRow, 0);
+        /*pass userProcessContainer and Patient*/
+        Patient patient= person.getPatient();
+        if(patient!=null)
+        {
+            viewUpdatePatientdetails vupdJPanel=
+                    new viewUpdatePatientdetails(userProcessContainer, patient,Boolean.TRUE);
+            userProcessContainer.add("vupdJPanel", vupdJPanel);
+            CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Patient not created, "
+                    + "Please create Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_managepatienteditBtnActionPerformed
+
+    private void managepatientviewBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatientviewBtnActionPerformed
+        // TODO add your handling code here:
+        int selectedRow= patientTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        person person=(person) patientTable.getValueAt(selectedRow, 0);
+        /*pass userProcessContainer and Patient*/
+        Patient patient= person.getPatient();
+        if(patient!=null)
+        {
+            viewUpdatePatientdetails vupdJPanel=
+                    new viewUpdatePatientdetails(userProcessContainer, patient,Boolean.FALSE);
+            userProcessContainer.add("vupdJPanel", vupdJPanel);
+            CardLayout layout=(CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Patient not created, "
+                    + "Please create Patient first.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_managepatientviewBtnActionPerformed
+
+    private void managepatientdeleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatientdeleteBtnActionPerformed
+        // TODO add your handling code here:
+   
+        
+        int selectedRow= patientTable.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a row from table.",
+                    "Error", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        person Person=(person) patientTable.getValueAt(selectedRow, 0);
+        Patient patient=Person.getPatient();
+        if(patient==null)
+        {
+            JOptionPane.showMessageDialog(this, "Patient not created. Cannot delete",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        /*Ask confirmation*/
+        int flag= JOptionPane.showConfirmDialog(this, "Are you sure want to remove?",
+                "Warning", JOptionPane.YES_NO_OPTION);
+        if(flag==0)
+        {
+            Person.setPatient(null);
+            populatePatientsTable(personDirectory.getPersonHistory());
+        }
+    }//GEN-LAST:event_managepatientdeleteBtnActionPerformed
+
+    private void managepatientbackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatientbackBtnActionPerformed
+        // TODO add your handling code here:
+         userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_managepatientbackBtnActionPerformed
+
+    private void managepatientsearchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatientsearchBtnActionPerformed
+        // TODO add your handling code here:
+        String key= managepatientsearchTxt.getText().trim();
+        if(key.length()==0)
+        {
+            JOptionPane.showMessageDialog(this, "Please enter key.", "Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        ArrayList<person> searchPatients;
+        searchPatients=personDirectory.searchPatient(key);
+        populatePatientsTable(searchPatients);
+    }//GEN-LAST:event_managepatientsearchBtnActionPerformed
+
+    private void managepatientsearchTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managepatientsearchTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_managepatientsearchTxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

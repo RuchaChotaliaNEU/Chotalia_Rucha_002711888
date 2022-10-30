@@ -41,8 +41,10 @@ public class createPerson extends javax.swing.JPanel {
         personweightTxt = new javax.swing.JTextField();
         personaddressTxt = new javax.swing.JTextField();
         createpersonprofileLbl = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        createpersonheightLbl = new javax.swing.JLabel();
+        createpatientheightTxt = new javax.swing.JTextField();
+        hospitalLbl = new javax.swing.JLabel();
+        hospitalTxt = new javax.swing.JTextField();
 
         personcityTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +87,15 @@ public class createPerson extends javax.swing.JPanel {
 
         createpersonprofileLbl.setText("Create Person Profile");
 
-        jLabel1.setText("Height");
+        createpersonheightLbl.setText("Height");
+
+        createpatientheightTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createpatientheightTxtActionPerformed(evt);
+            }
+        });
+
+        hospitalLbl.setText("Hospital");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -94,7 +104,7 @@ public class createPerson extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(createpersonheightLbl)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(backBtn)
@@ -102,26 +112,29 @@ public class createPerson extends javax.swing.JPanel {
                             .addComponent(createBtn))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(personnameLbl)
-                                .addComponent(personageLbl)
-                                .addComponent(personweightLbl)
-                                .addComponent(personaddressLbl, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(personcityLbl)
-                                .addComponent(personlocalityLbl))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(personnameLbl)
+                                    .addComponent(personageLbl)
+                                    .addComponent(personweightLbl)
+                                    .addComponent(personaddressLbl, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(personcityLbl)
+                                    .addComponent(personlocalityLbl))
+                                .addComponent(hospitalLbl))
                             .addGap(43, 43, 43)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(hospitalTxt)
                                 .addComponent(createpersonprofileLbl)
-                                .addComponent(personlocalityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(personcityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(personaddressTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(personweightTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(personageTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(personnameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(personlocalityTxt)
+                                .addComponent(personcityTxt)
+                                .addComponent(personaddressTxt)
+                                .addComponent(personweightTxt)
+                                .addComponent(personageTxt)
+                                .addComponent(personnameTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+                                .addComponent(createpatientheightTxt)))))
                 .addContainerGap(314, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextField1, personaddressTxt, personageTxt, personcityTxt, personlocalityTxt, personnameTxt, personweightTxt});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {createpatientheightTxt, personaddressTxt, personageTxt, personcityTxt, personlocalityTxt, personnameTxt, personweightTxt});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,10 +153,10 @@ public class createPerson extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personweightLbl)
                     .addComponent(personweightTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(createpersonheightLbl)
+                    .addComponent(createpatientheightTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personaddressLbl)
@@ -156,13 +169,15 @@ public class createPerson extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(personlocalityLbl)
                     .addComponent(personlocalityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hospitalLbl)
+                    .addComponent(hospitalTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backBtn)
                     .addComponent(createBtn))
-                .addContainerGap())
+                .addGap(52, 52, 52))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -182,13 +197,19 @@ public class createPerson extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_personcityTxtActionPerformed
 
+    private void createpatientheightTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createpatientheightTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createpatientheightTxtActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backBtn;
     private javax.swing.JButton createBtn;
+    private javax.swing.JTextField createpatientheightTxt;
+    private javax.swing.JLabel createpersonheightLbl;
     private javax.swing.JLabel createpersonprofileLbl;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel hospitalLbl;
+    private javax.swing.JTextField hospitalTxt;
     private javax.swing.JLabel personaddressLbl;
     private javax.swing.JTextField personaddressTxt;
     private javax.swing.JLabel personageLbl;

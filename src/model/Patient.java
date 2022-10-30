@@ -9,10 +9,17 @@ package model;
  * @author ruchachotalia
  */
 public class Patient {
+
+    
     private String patientID;
     private String primaryDoctorName;
-    private String prefferedPharmacy;
+    private vitalSignhistory vitalSignHistory;
 
+    
+    public Patient() {
+        this.vitalSignHistory = new vitalSignhistory();
+    }
+    
     public String getPatientID() {
         return patientID;
     }
@@ -29,13 +36,16 @@ public class Patient {
         this.primaryDoctorName = primaryDoctorName;
     }
 
-    public String getPrefferedPharmacy() {
-        return prefferedPharmacy;
+    public vitalSignhistory getVitalSignHistory() {
+        return vitalSignHistory;
     }
 
-    public void setPrefferedPharmacy(String prefferedPharmacy) {
-        this.prefferedPharmacy = prefferedPharmacy;
+    public void setVitalSignHistory(vitalSignhistory vitalSignHistory) {
+        this.vitalSignHistory = vitalSignHistory;
     }
+    
+    
+   
     
   
 }

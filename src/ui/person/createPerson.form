@@ -19,7 +19,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="createpersonheightLbl" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="backBtn" min="-2" max="-2" attributes="0"/>
@@ -28,23 +28,27 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="personnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personageLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personweightLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personaddressLbl" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="personcityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personlocalityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                  <Component id="personnameLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="personageLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="personweightLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="personaddressLbl" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="personcityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="personlocalityLbl" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="hospitalLbl" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="hospitalTxt" max="32767" attributes="0"/>
                               <Component id="createpersonprofileLbl" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personlocalityTxt" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personcityTxt" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personaddressTxt" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personweightTxt" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personageTxt" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="personnameTxt" linkSize="1" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
-                              <Component id="jTextField1" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="personlocalityTxt" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="personcityTxt" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="personaddressTxt" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="personweightTxt" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="personageTxt" linkSize="1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="personnameTxt" linkSize="1" alignment="0" pref="181" max="32767" attributes="0"/>
+                              <Component id="createpatientheightTxt" linkSize="1" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -73,10 +77,10 @@
                   <Component id="personweightLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="personweightTxt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="createpersonheightLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="createpatientheightTxt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -93,15 +97,17 @@
                   <Component id="personlocalityLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="personlocalityTxt" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="hospitalLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="hospitalTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="29" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="backBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="createBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -176,12 +182,22 @@
         <Property name="text" type="java.lang.String" value="Create Person Profile"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="createpersonheightLbl">
       <Properties>
         <Property name="text" type="java.lang.String" value="Height"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="createpatientheightTxt">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createpatientheightTxtActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="hospitalLbl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hospital"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="hospitalTxt">
     </Component>
   </SubComponents>
 </Form>

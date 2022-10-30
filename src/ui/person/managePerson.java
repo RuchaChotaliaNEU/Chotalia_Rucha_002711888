@@ -22,7 +22,7 @@ public class managePerson extends javax.swing.JPanel {
      */
     private personDirectory personDirectory;
     private JPanel userProcessContainer;
-    public managePerson() {
+    public managePerson(JPanel userProcessContainer, personDirectory personDirectory) {
         initComponents();
     }
 

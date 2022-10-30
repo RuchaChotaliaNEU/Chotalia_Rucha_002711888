@@ -17,6 +17,25 @@ public class vitalSign {
     private int bloodPressure;
     private int weight;
     private Date timestamp;
+    private double temperature;
+    private String comment;
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public float getTemperature() {
+        return (float) temperature;
+    }
+
+    public void setTemperature(float temperature) {
+        this.temperature = temperature;
+    }
+    
 
     public int getRespiratoryRate() {
         return respiratoryRate;

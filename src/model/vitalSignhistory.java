@@ -20,4 +20,13 @@ public class vitalSignhistory {
     public void setHistory(ArrayList<vitalSign> history) {
         this.history = history;
     }
+    
+    public vitalSign createAndAddVitalSign() {
+        vitalSign vitalSign = new vitalSign();
+        history.add(vitalSign);
+        return vitalSign;
+    }
+    public void deleteVitalSign(vitalSign vitalSign) {
+        history.remove(vitalSign);
+    }
 }

@@ -4,6 +4,15 @@
  */
 package ui.patient;
 
+import java.util.Date;
+import javax.swing.InputVerifier;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import model.Intergerverifier;
+import model.Patient;
+import model.person;
+import model.vitalSign;
+
 /**
  *
  * @author ruchachotalia
@@ -13,8 +22,27 @@ public class createVitalsign extends javax.swing.JPanel {
     /**
      * Creates new form createVitalsign
      */
-    public createVitalsign() {
+    
+    private person person;
+    
+    private Patient patient;
+    private JPanel userProcessContainer;
+    
+    public createVitalsign(JPanel upc, Patient patient) {
         initComponents();
+        
+        this.userProcessContainer = upc;
+        this.patient = patient;
+    }
+    
+    private void addVerifiers() {
+        InputVerifier integerVerifier = new Intergerverifier();
+        o2Txt.setInputVerifier(integerVerifier);
+        heartrateTxt.setInputVerifier(integerVerifier);
+        systolicbpTxt.setInputVerifier(integerVerifier);
+        weightTxt.setInputVerifier(integerVerifier);
+        temperatureTxt.setInputVerifier(integerVerifier);
+        commentTxt.setInputVerifier(integerVerifier);
     }
 
     /**
@@ -26,121 +54,172 @@ public class createVitalsign extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        entervitalsignLbl = new javax.swing.JLabel();
+        o2Lbl = new javax.swing.JLabel();
+        heartrateLbl = new javax.swing.JLabel();
+        sysbpLbl = new javax.swing.JLabel();
+        weightLbl = new javax.swing.JLabel();
+        o2Txt = new javax.swing.JTextField();
+        heartrateTxt = new javax.swing.JTextField();
+        systolicbpTxt = new javax.swing.JTextField();
+        weightTxt = new javax.swing.JTextField();
+        backBtn = new javax.swing.JButton();
+        createBtn = new javax.swing.JButton();
+        tempLbl = new javax.swing.JLabel();
+        temperatureTxt = new javax.swing.JTextField();
+        commentLbl = new javax.swing.JLabel();
+        commentTxt = new javax.swing.JTextField();
 
-        jLabel1.setText("Enter Vital Signs");
+        entervitalsignLbl.setText("Enter Vital Signs");
 
-        jLabel2.setText("O2 rate");
+        o2Lbl.setText("O2 rate");
 
-        jLabel3.setText("Heart Rate");
+        heartrateLbl.setText("Heart Rate");
 
-        jLabel4.setText("Systolic Blood Pressure");
+        sysbpLbl.setText("Systolic Blood Pressure");
 
-        jLabel5.setText("Weight");
+        weightLbl.setText("Weight");
 
-        jButton1.setText("<<Back");
+        backBtn.setText("<<Back");
 
-        jButton2.setText("Create");
+        createBtn.setText("Create");
+        createBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createBtnActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setText("Temperature");
+        tempLbl.setText("Temperature");
+
+        commentLbl.setText("Any additional comments:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(221, 221, 221)
+                .addComponent(entervitalsignLbl)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(254, 254, 254)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(131, 131, 131)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel6))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(101, 101, 101)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(weightLbl)
+                                .addComponent(sysbpLbl)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(o2Lbl)
+                                    .addGap(131, 131, 131)))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                                .addComponent(jButton2)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(heartrateLbl)
+                                    .addComponent(tempLbl)
+                                    .addComponent(commentLbl))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(o2Txt, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                            .addComponent(heartrateTxt)
+                            .addComponent(systolicbpTxt)
+                            .addComponent(weightTxt)
+                            .addComponent(temperatureTxt)
+                            .addComponent(commentTxt)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(backBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(createBtn)))
                 .addGap(233, 233, 233))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addComponent(entervitalsignLbl)
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(o2Lbl)
+                    .addComponent(o2Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(heartrateLbl)
+                    .addComponent(heartrateTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sysbpLbl)
+                    .addComponent(systolicbpTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(weightLbl)
+                    .addComponent(weightTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                    .addComponent(tempLbl)
+                    .addComponent(temperatureTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(commentLbl)
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(commentTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(92, Short.MAX_VALUE))
+                    .addComponent(backBtn)
+                    .addComponent(createBtn))
+                .addGap(19, 19, 19))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void createBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBtnActionPerformed
+        // TODO add your handling code here:
+        try {
+            int respiratoryRate = Integer.parseInt(o2Txt.getText());
+            int heartRate = Integer.parseInt(heartrateTxt.getText());
+            int bloodPressure = Integer.parseInt(systolicbpTxt.getText());
+            int weight = Integer.parseInt(weightTxt.getText());
+            float temperature = Float.parseFloat(temperatureTxt.getText());
+            String comment = commentTxt.getText();
+            
+            vitalSign VitalSign = patient.getVitalSignHistory().createAndAddVitalSign();
+            VitalSign.setRespiratoryRate(respiratoryRate);
+            VitalSign.setHeartRate(heartRate);
+            VitalSign.setBloodPressure(bloodPressure);
+            VitalSign.setTemperature((float) temperature);
+            VitalSign.setWeight(weight);
+            VitalSign.setComment(comment);
+            
+            /*Set current date and time as TimeStamp*/
+            VitalSign.setTimestamp(new Date());
+            JOptionPane.showMessageDialog(this, "Vital signs added!!", "Update",
+                    JOptionPane.INFORMATION_MESSAGE);
+            clearFields();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Please enter correct values",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_createBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JButton backBtn;
+    private javax.swing.JLabel commentLbl;
+    private javax.swing.JTextField commentTxt;
+    private javax.swing.JButton createBtn;
+    private javax.swing.JLabel entervitalsignLbl;
+    private javax.swing.JLabel heartrateLbl;
+    private javax.swing.JTextField heartrateTxt;
+    private javax.swing.JLabel o2Lbl;
+    private javax.swing.JTextField o2Txt;
+    private javax.swing.JLabel sysbpLbl;
+    private javax.swing.JTextField systolicbpTxt;
+    private javax.swing.JLabel tempLbl;
+    private javax.swing.JTextField temperatureTxt;
+    private javax.swing.JLabel weightLbl;
+    private javax.swing.JTextField weightTxt;
     // End of variables declaration//GEN-END:variables
+
+    private void clearFields() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

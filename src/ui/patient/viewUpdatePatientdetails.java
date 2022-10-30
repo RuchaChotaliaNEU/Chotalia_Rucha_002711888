@@ -8,21 +8,20 @@ import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Patient;
-import model.person;
 
 /**
  *
  * @author ruchachotalia
  */
-
-public class createPatient extends javax.swing.JPanel {
+public class viewUpdatePatientdetails extends javax.swing.JPanel {
 
     /**
-     * Creates new form createPatient
+     * Creates new form viewUpdatePatientdetails
      */
-    private person person;
+    private Patient Patient;
     private JPanel userProcessContainer;
-    public createPatient(JPanel userProcessContainer1, person person1) {
+    private Boolean isEdit = Boolean.FALSE;
+    public viewUpdatePatientdetails(JPanel userProcessContainer, Patient patient, Boolean TRUE) {
         initComponents();
     }
 
@@ -35,19 +34,14 @@ public class createPatient extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        patientdetailsLbl = new javax.swing.JLabel();
-        patientidLbl = new javax.swing.JLabel();
-        primarydocnameLbl = new javax.swing.JLabel();
         patientidTxt = new javax.swing.JTextField();
         primarydocnameTxt = new javax.swing.JTextField();
         patientdetailsbackBtn = new javax.swing.JButton();
         patientdetailsaddpatientBtn = new javax.swing.JButton();
-
-        patientdetailsLbl.setText("Patient Details");
-
-        patientidLbl.setText("Patient ID");
-
-        primarydocnameLbl.setText("Primary Doctor Name");
+        patientdetailsLbl = new javax.swing.JLabel();
+        patientidLbl = new javax.swing.JLabel();
+        primarydocnameLbl = new javax.swing.JLabel();
+        patientdetailseditBtn = new javax.swing.JButton();
 
         patientdetailsbackBtn.setText("<<Back");
         patientdetailsbackBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -60,6 +54,19 @@ public class createPatient extends javax.swing.JPanel {
         patientdetailsaddpatientBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 patientdetailsaddpatientBtnActionPerformed(evt);
+            }
+        });
+
+        patientdetailsLbl.setText("Patient Details");
+
+        patientidLbl.setText("Patient ID");
+
+        primarydocnameLbl.setText("Primary Doctor Name");
+
+        patientdetailseditBtn.setText("Edit");
+        patientdetailseditBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientdetailseditBtnActionPerformed(evt);
             }
         });
 
@@ -83,11 +90,13 @@ public class createPatient extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(patientdetailsbackBtn)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(patientdetailseditBtn)
+                                .addGap(18, 18, 18)
                                 .addComponent(patientdetailsaddpatientBtn))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(263, 263, 263)
                         .addComponent(patientdetailsLbl)))
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,55 +114,67 @@ public class createPatient extends javax.swing.JPanel {
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(patientdetailsbackBtn)
-                    .addComponent(patientdetailsaddpatientBtn))
-                .addContainerGap(173, Short.MAX_VALUE))
+                    .addComponent(patientdetailsaddpatientBtn)
+                    .addComponent(patientdetailseditBtn))
+                .addContainerGap(206, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void patientdetailsbackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientdetailsbackBtnActionPerformed
         // TODO add your handling code here:
-         userProcessContainer.remove(this);
+        userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_patientdetailsbackBtnActionPerformed
 
+    private void modifyTextFields(Boolean isEdit) {
+        if (isEdit) {
+            patientidTxt.setEnabled(true);
+            primarydocnameTxt.setEnabled(true);
+            
+        } else {
+            patientidTxt.setEnabled(false);
+            primarydocnameTxt.setEnabled(false);
+            
+    }
+    }
+     private Boolean checkBlankInput() {
+        if (patientidTxt.getText().length()==0 || primarydocnameTxt.getText().length() == 0)
+                {
+            return false;
+        } else {
+            return true;
+        }
+    }
     private void patientdetailsaddpatientBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientdetailsaddpatientBtnActionPerformed
         // TODO add your handling code here:
-        if (checkBlankInput())
-        {
-            Patient patient = new Patient();
-            patient.setPatientID(patientidTxt.getText());
-            patient.setPrimaryDoctorName(primarydocnameTxt.getText());
+         if (checkBlankInput()) {
+            Patient.setPatientID(patientidTxt.getText());
+            Patient.setPrimaryDoctorName(primarydocnameTxt.getText());
             
-            //Adding Patient to Person
-            person.setPatient(patient);
-            JOptionPane.showMessageDialog(this, "Patient added!!", "Update", 
+            JOptionPane.showMessageDialog(this, "Patient updated!!", "Update", 
                     JOptionPane.INFORMATION_MESSAGE);
-            clearFields();
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Please enter all values",
+            modifyTextFields(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please enter correct values", 
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_patientdetailsaddpatientBtnActionPerformed
+
+    private void patientdetailseditBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientdetailseditBtnActionPerformed
+        // TODO add your handling code here:
+        modifyTextFields(true);
+    }//GEN-LAST:event_patientdetailseditBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel patientdetailsLbl;
     private javax.swing.JButton patientdetailsaddpatientBtn;
     private javax.swing.JButton patientdetailsbackBtn;
+    private javax.swing.JButton patientdetailseditBtn;
     private javax.swing.JLabel patientidLbl;
     private javax.swing.JTextField patientidTxt;
     private javax.swing.JLabel primarydocnameLbl;
     private javax.swing.JTextField primarydocnameTxt;
     // End of variables declaration//GEN-END:variables
-
-    private boolean checkBlankInput() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void clearFields() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

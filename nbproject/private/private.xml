@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/ui/mainFrame.java</file>
-            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/ui/doctor.java</file>
-            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/ui/patient.java</file>
-            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/ui/health.png</file>
-            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/model/Patient.java</file>
+            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/ui/patient/managePatient.java</file>
+            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/model/personDirectory.java</file>
+            <file>file:/Users/ruchachotalia/NetBeansProjects/Assignment2_HealthSystem/src/ui/patient/createVitalsign.java</file>
         </group>
     </open-files>
 </project-private>

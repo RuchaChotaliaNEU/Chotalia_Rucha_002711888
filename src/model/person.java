@@ -16,6 +16,15 @@ public class person {
     private Patient patient;
     private int weight;
     private int height;
+    private String hospital;
+
+    public String getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(String hospital) {
+        this.hospital = hospital;
+    }
 
     public int getHeight() {
         return height;
