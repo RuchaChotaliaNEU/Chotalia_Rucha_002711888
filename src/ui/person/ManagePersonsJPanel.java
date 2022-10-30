@@ -75,29 +75,37 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
         deletePersonJButton = new javax.swing.JButton();
         searchBoxJTextField = new javax.swing.JTextField();
         createPersonJButton = new javax.swing.JButton();
+        bgLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        searchPersonJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         searchPersonJButton.setText("Search Person");
         searchPersonJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchPersonJButtonActionPerformed(evt);
             }
         });
+        add(searchPersonJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(373, 62, -1, -1));
 
+        backJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         backJButton.setText("<<Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 228, 100, -1));
 
+        refreshJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButtonActionPerformed(evt);
             }
         });
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 283, 120, -1));
 
         viewPersonsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -117,89 +125,54 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(viewPersonsJTable);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 104, 623, 106));
+
+        jLabel1.setFont(new java.awt.Font("Gujarati MT", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Persons Directory");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 6, 259, -1));
 
+        editPersonJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         editPersonJButton.setText("Edit Person");
         editPersonJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editPersonJButtonActionPerformed(evt);
             }
         });
+        add(editPersonJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(396, 228, -1, -1));
 
+        viewPersonJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         viewPersonJButton.setText("View Person");
         viewPersonJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewPersonJButtonActionPerformed(evt);
             }
         });
+        add(viewPersonJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 228, 120, -1));
 
+        deletePersonJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         deletePersonJButton.setText("Delete Person");
         deletePersonJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletePersonJButtonActionPerformed(evt);
             }
         });
+        add(deletePersonJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 228, -1, -1));
 
+        searchBoxJTextField.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
+        add(searchBoxJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(508, 62, 119, -1));
+
+        createPersonJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         createPersonJButton.setText("Create Person");
         createPersonJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createPersonJButtonActionPerformed(evt);
             }
         });
+        add(createPersonJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(124, 228, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addComponent(searchPersonJButton)
-                        .addGap(93, 93, 93)
-                        .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(98, 98, 98)
-                        .addComponent(refreshJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(createPersonJButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(viewPersonJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(editPersonJButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(deletePersonJButton))
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewPersonJButton)
-                    .addComponent(editPersonJButton)
-                    .addComponent(deletePersonJButton)
-                    .addComponent(backJButton)
-                    .addComponent(createPersonJButton))
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(searchPersonJButton)
-                    .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(refreshJButton))
-                .addContainerGap(279, Short.MAX_VALUE))
-        );
+        bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
+        add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -210, 1690, 1200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void searchPersonJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPersonJButtonActionPerformed
@@ -294,6 +267,7 @@ public class ManagePersonsJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
+    private javax.swing.JLabel bgLbl;
     private javax.swing.JButton createPersonJButton;
     private javax.swing.JButton deletePersonJButton;
     private javax.swing.JButton editPersonJButton;

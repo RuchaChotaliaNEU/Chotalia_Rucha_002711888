@@ -16,9 +16,10 @@ import ui.person.ManagePersonsJPanel;
 
 /**
  *
- * @author ruchachotalia
+ * @author ruchachotalia 
  */
 public class MainJFrame extends javax.swing.JFrame {
+    
     
     /**
      * Creates new form MainJFrame
@@ -36,7 +37,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1.setVisible(false);
         btnEncounter.setVisible(false);
         btnDirectory.setVisible(false);
-        btnLogout.setVisible(false);
         btnLogin.setEnabled(true);
     }
     
@@ -57,7 +57,6 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnEncounter = new javax.swing.JButton();
         btnDirectory = new javax.swing.JButton();
-        btnLogout = new javax.swing.JButton();
         userProcessContainer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lblTitle = new javax.swing.JLabel();
@@ -67,18 +66,20 @@ public class MainJFrame extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         txtUsername = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
-        bgLbl = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(142, 211, 203));
         setMinimumSize(new java.awt.Dimension(700, 500));
 
         jSplitPane1.setMinimumSize(new java.awt.Dimension(700, 700));
         jSplitPane1.setPreferredSize(new java.awt.Dimension(700, 700));
 
-        leftJPanel.setBackground(new java.awt.Color(142, 201, 230));
+        leftJPanel.setBackground(new java.awt.Color(142, 211, 203));
         leftJPanel.setMinimumSize(new java.awt.Dimension(200, 700));
         leftJPanel.setPreferredSize(new java.awt.Dimension(200, 700));
 
+        patientManagerJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         patientManagerJButton.setText("Patients Directory");
         patientManagerJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +87,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        managePersonsJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         managePersonsJButton.setText("Person Directory");
         managePersonsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +95,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnDashboard.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         btnDashboard.setText("Dashboard");
         btnDashboard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,9 +103,10 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Gujarati MT", 1, 18)); // NOI18N
         jLabel1.setText("Choose an option");
 
+        btnEncounter.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         btnEncounter.setText("Encounter Details");
         btnEncounter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,17 +114,11 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
+        btnDirectory.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         btnDirectory.setText("Patients Details");
         btnDirectory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDirectoryActionPerformed(evt);
-            }
-        });
-
-        btnLogout.setText("Logout");
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
             }
         });
 
@@ -135,17 +133,13 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(leftJPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(leftJPanelLayout.createSequentialGroup()
-                        .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addComponent(btnEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(btnDirectory, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(leftJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(managePersonsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(patientManagerJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(btnEncounter, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         leftJPanelLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDashboard, btnDirectory, btnEncounter});
@@ -157,17 +151,15 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(managePersonsJButton)
-                .addGap(24, 24, 24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(patientManagerJButton)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDashboard)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEncounter)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnDirectory)
-                .addGap(182, 182, 182)
-                .addComponent(btnLogout)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(387, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(leftJPanel);
@@ -176,13 +168,14 @@ public class MainJFrame extends javax.swing.JFrame {
         userProcessContainer.setPreferredSize(new java.awt.Dimension(500, 700));
         userProcessContainer.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(87, 165, 207));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 153));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Gujarati MT", 3, 18)); // NOI18N
+        lblTitle.setFont(new java.awt.Font("Gujarati MT", 1, 24)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Login As:");
-        jPanel1.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 156, -1));
+        jPanel1.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 156, 30));
 
         userType.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         userType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "System Admin", "Hospital Admin", "Community Admin", "Doctor", "Person Login" }));
@@ -191,29 +184,30 @@ public class MainJFrame extends javax.swing.JFrame {
                 userTypeActionPerformed(evt);
             }
         });
-        jPanel1.add(userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, -1, -1));
+        jPanel1.add(userType, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 260, -1));
 
-        lblUsername.setFont(new java.awt.Font("Gujarati MT", 1, 12)); // NOI18N
+        lblUsername.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         lblUsername.setText("Username");
-        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 57, -1));
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         lblPassword.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         lblPassword.setText("Password");
-        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, -1, -1));
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 160, -1));
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, 160, -1));
+        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 59, -1));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 200, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, -1));
 
-        btnLogin.setFont(new java.awt.Font("Gujarati MT", 1, 12)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Gujarati MT", 1, 18)); // NOI18N
         btnLogin.setText("Login");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 490, 160, -1));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 312, 200, 30));
 
-        bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/hpbg.png"))); // NOI18N
-        jPanel1.add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 1240, 700));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
+        jLabel2.setPreferredSize(new java.awt.Dimension(300, 300));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -780, 2380, 2530));
 
         userProcessContainer.add(jPanel1, "card2");
 
@@ -251,13 +245,13 @@ public class MainJFrame extends javax.swing.JFrame {
     private void userTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTypeActionPerformed
         // TODO add your handling code here:
         
-//        patientManagerJButton.setVisible(false);
-//        btnDashboard.setVisible(false);
-//        managePersonsJButton.setVisible(false);
-//        jLabel1.setVisible(false);
-//        btnEncounter.setVisible(false);
-//        btnDirectory.setVisible(false);
-//        btnLogin.setEnabled(true);
+        patientManagerJButton.setVisible(false);
+        btnDashboard.setVisible(false);
+        managePersonsJButton.setVisible(false);
+        jLabel1.setVisible(false);
+        btnEncounter.setVisible(false);
+        btnDirectory.setVisible(false);
+        btnLogin.setEnabled(true);
         
         
          if (userType.getSelectedItem().toString() == "Person Login") {
@@ -277,14 +271,12 @@ public class MainJFrame extends javax.swing.JFrame {
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         
-        patientManagerJButton.setVisible(false);
-        btnDashboard.setVisible(false);
-        managePersonsJButton.setVisible(false);
-        jLabel1.setVisible(false);
-        btnEncounter.setVisible(false);
-        btnDirectory.setVisible(false);
-        btnLogout.setVisible(false);
-        btnLogin.setEnabled(true);
+//        patientManagerJButton.setVisible(false);
+//        btnDashboard.setVisible(false);
+//        managePersonsJButton.setVisible(false);
+//        jLabel1.setVisible(false);
+//        btnEncounter.setVisible(false);
+//        btnLogin.setEnabled(true);
 
             
         if (userType.getSelectedItem().toString() == "Person Login") {
@@ -307,7 +299,6 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnDashboard.setVisible(true);
                 btnEncounter.setVisible(true);
                 btnDirectory.setVisible(true);
-                btnLogout.setVisible(true);
                 user = "System";
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect credential");
@@ -325,7 +316,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 btnDashboard.setVisible(false);
                 btnEncounter.setVisible(true);
                 btnDirectory.setVisible(true);
-                btnLogout.setVisible(true);
+                
                 user = "Hospital";
             } else {
                 JOptionPane.showMessageDialog(this, "Incorrect credential");
@@ -343,11 +334,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 jLabel1.setVisible(true);
                 btnDashboard.setVisible(true);
                 patientManagerJButton.setVisible(false);
+                patientManagerJButton.setEnabled(false);
                 btnEncounter.setVisible(false);
                 btnDirectory.setVisible(false);
-                btnLogout.setVisible(true);
-                
-                patientManagerJButton.setEnabled(false);
 
                 VitalSignReportJPanel report = new VitalSignReportJPanel(userProcessContainer, personDirectory);
         userProcessContainer.add("report",report);
@@ -366,13 +355,12 @@ public class MainJFrame extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(this, "Doctor Admin login successfull");
                 //managePersonsJButton.setVisible(false);
                 user = "Doctor";
-                jLabel1.setVisible(true);
+                jLabel1.setVisible(false);
                 btnDashboard.setVisible(false);
                 patientManagerJButton.setVisible(false);
                 btnEncounter.setVisible(true);
-                patientManagerJButton.setEnabled(false);
+                patientManagerJButton.setEnabled(true);
                 btnDirectory.setVisible(true);
-                btnLogout.setVisible(true);
                  
              }  
              else {
@@ -396,16 +384,6 @@ public class MainJFrame extends javax.swing.JFrame {
         CardLayout layout=(CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnDirectoryActionPerformed
-
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
-        
-        MainJFrame mvsJPanel=new MainJFrame();
-        userProcessContainer.add("mvsJPanel", mvsJPanel);
-        //CardLayout layout=(CardLayout) userProcessContainer.getLayout();
-        //layout.previous(userProcessContainer);
-        
-    }//GEN-LAST:event_btnLogoutActionPerformed
     
     /**
      * @param args the command line arguments
@@ -443,13 +421,12 @@ public class MainJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel bgLbl;
     private javax.swing.JButton btnDashboard;
     private javax.swing.JButton btnDirectory;
     private javax.swing.JButton btnEncounter;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JLabel lblPassword;

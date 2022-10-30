@@ -41,55 +41,42 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
         managePatientsJButton = new javax.swing.JButton();
         manageVitalSignsJButton = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
+        bgLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        managePatientsJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         managePatientsJButton.setText("Patients Directory");
         managePatientsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 managePatientsJButtonActionPerformed(evt);
             }
         });
+        add(managePatientsJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 154, 143, -1));
 
+        manageVitalSignsJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         manageVitalSignsJButton.setText("Encounter History");
         manageVitalSignsJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageVitalSignsJButtonActionPerformed(evt);
             }
         });
+        add(manageVitalSignsJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 200, -1, -1));
 
+        btnLogout.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
+        add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 246, 143, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(165, 165, 165)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(managePatientsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(manageVitalSignsJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(178, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(managePatientsJButton)
-                .addGap(18, 18, 18)
-                .addComponent(manageVitalSignsJButton)
-                .addGap(18, 18, 18)
-                .addComponent(btnLogout)
-                .addContainerGap(450, Short.MAX_VALUE))
-        );
+        bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
+        add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -210, 1690, 1200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void managePatientsJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_managePatientsJButtonActionPerformed
@@ -119,6 +106,7 @@ public class PatientManagerWorkAreaJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgLbl;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton managePatientsJButton;
     private javax.swing.JButton manageVitalSignsJButton;

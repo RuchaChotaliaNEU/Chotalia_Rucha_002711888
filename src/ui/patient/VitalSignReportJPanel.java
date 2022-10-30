@@ -124,8 +124,10 @@ public class VitalSignReportJPanel extends javax.swing.JPanel {
         vieReportJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         txtlogout = new javax.swing.JButton();
+        bgLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         vieReportJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -140,44 +142,24 @@ public class VitalSignReportJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(vieReportJTable);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 83, 596, 166));
+
+        jLabel1.setFont(new java.awt.Font("Gujarati MT", 1, 24)); // NOI18N
         jLabel1.setText("Vital Signs Dashboard");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 29, -1, 36));
 
-        txtlogout.setText("LOGOUT");
+        txtlogout.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
+        txtlogout.setText("<<Back");
         txtlogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtlogoutActionPerformed(evt);
             }
         });
+        add(txtlogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 279, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtlogout)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(39, 39, 39))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(249, 249, 249)))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(txtlogout)
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
+        bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
+        add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -210, 1690, 1200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtlogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlogoutActionPerformed
@@ -189,6 +171,7 @@ public class VitalSignReportJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bgLbl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton txtlogout;

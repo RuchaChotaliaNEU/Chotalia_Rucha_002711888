@@ -68,16 +68,19 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
         personhospital = new javax.swing.JComboBox<>();
         persondoctorJTextField1 = new javax.swing.JLabel();
         persondoctor = new javax.swing.JComboBox<>();
+        bgLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         personAgeJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personAgeJTextFieldActionPerformed(evt);
             }
         });
+        add(personAgeJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 116, 196, -1));
 
         addPersonJButton.setText("Create Profile");
         addPersonJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -85,16 +88,21 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 addPersonJButtonActionPerformed(evt);
             }
         });
+        add(addPersonJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 344, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Create Person Profile");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 28, 455, -1));
 
         patientNameJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         patientNameJLabel.setText("Person Name: ");
+        add(patientNameJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 84, 90, -1));
 
         AgeJLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         AgeJLabel.setText("Age : ");
+        add(AgeJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 119, 90, -1));
+        add(personNameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 81, 196, -1));
 
         backJButton.setText("Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -102,27 +110,35 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 344, 97, -1));
 
         weightjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         weightjLabel.setText("Weight: ");
+        add(weightjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 154, 90, -1));
 
         personWeightJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personWeightJTextFieldActionPerformed(evt);
             }
         });
+        add(personWeightJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 151, 196, -1));
 
         addressjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         addressjLabel.setText("Address:");
+        add(addressjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 183, 90, -1));
 
         cityjLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         cityjLabel.setText("City:");
+        add(cityjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 206, 90, -1));
+        add(personAddressJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 180, 196, -1));
 
         personCityJTextField.setEditable(false);
         personCityJTextField.setText("Boston");
+        add(personCityJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 203, 196, -1));
 
         personCommunityJTextField1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         personCommunityJTextField1.setText("Community:");
+        add(personCommunityJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 236, 90, -1));
 
         personCommunityjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Roxbury", "Fenway", "Downtown", "Kenmore" }));
         personCommunityjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -130,18 +146,22 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 personCommunityjComboBox1ActionPerformed(evt);
             }
         });
+        add(personCommunityjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 233, 196, -1));
 
         personhospitalJTextField1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         personhospitalJTextField1.setText("Hospital:");
+        add(personhospitalJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 265, 90, -1));
 
         personhospital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 personhospitalActionPerformed(evt);
             }
         });
+        add(personhospital, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 262, 196, -1));
 
         persondoctorJTextField1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         persondoctorJTextField1.setText("Doctor:");
+        add(persondoctorJTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 294, 90, -1));
 
         persondoctor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Cardiologist", "Neurologist", "Gynachologist", "Dentist" }));
         persondoctor.addActionListener(new java.awt.event.ActionListener() {
@@ -149,96 +169,10 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
                 persondoctorActionPerformed(evt);
             }
         });
+        add(persondoctor, new org.netbeans.lib.awtextra.AbsoluteConstraints(202, 291, 196, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(AgeJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(patientNameJLabel)
-                                .addComponent(weightjLabel)
-                                .addComponent(addressjLabel)
-                                .addComponent(cityjLabel)
-                                .addComponent(persondoctorJTextField1))
-                            .addComponent(personCommunityJTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(personhospitalJTextField1))
-                        .addGap(25, 25, 25))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(addPersonJButton)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(personAgeJTextField)
-                    .addComponent(persondoctor, 0, 159, Short.MAX_VALUE)
-                    .addComponent(personAddressJTextField)
-                    .addComponent(personNameJTextField)
-                    .addComponent(personWeightJTextField)
-                    .addComponent(personCityJTextField)
-                    .addComponent(personCommunityjComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(personhospital, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(206, 206, 206))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AgeJLabel, addressjLabel, cityjLabel, patientNameJLabel, personCommunityJTextField1, persondoctorJTextField1, personhospitalJTextField1, weightjLabel});
-
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patientNameJLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personAgeJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AgeJLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personWeightJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(weightjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addressjLabel)
-                    .addComponent(personAddressJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personCityJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cityjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personCommunityJTextField1)
-                    .addComponent(personCommunityjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(personhospitalJTextField1)
-                    .addComponent(personhospital, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(persondoctor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(persondoctorJTextField1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addPersonJButton)
-                    .addComponent(backJButton))
-                .addGap(236, 236, 236))
-        );
-
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {personAddressJTextField, personAgeJTextField, personCityJTextField, personCommunityjComboBox1, personNameJTextField, personWeightJTextField, persondoctor, personhospital});
-
+        bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
+        add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -210, 1690, 1200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void addPersonJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPersonJButtonActionPerformed
@@ -341,6 +275,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
     private javax.swing.JButton addPersonJButton;
     private javax.swing.JLabel addressjLabel;
     private javax.swing.JButton backJButton;
+    private javax.swing.JLabel bgLbl;
     private javax.swing.JLabel cityjLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel patientNameJLabel;

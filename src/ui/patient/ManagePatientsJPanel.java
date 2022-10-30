@@ -92,11 +92,14 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
         backJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
         createPatientJButton = new javax.swing.JButton();
+        bgLbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(500, 700));
         setPreferredSize(new java.awt.Dimension(500, 700));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        viewPersonsJTable.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         viewPersonsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -124,107 +127,82 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
             viewPersonsJTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 126, 534, 106));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Gujarati MT", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Patients");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 20, 482, -1));
 
+        editPatientJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         editPatientJButton.setText("Edit Patient");
         editPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editPatientJButtonActionPerformed(evt);
             }
         });
+        add(editPatientJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 250, -1, -1));
 
+        viewPatientJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         viewPatientJButton.setText("View Patient");
         viewPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 viewPatientJButtonActionPerformed(evt);
             }
         });
+        add(viewPatientJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 250, -1, -1));
 
+        deletePatientJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         deletePatientJButton.setText("Delete Patient");
         deletePatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deletePatientJButtonActionPerformed(evt);
             }
         });
+        add(deletePatientJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(432, 250, -1, -1));
 
+        searchBoxJTextField.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
+        add(searchBoxJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(437, 80, 111, -1));
+
+        searchPatientJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         searchPatientJButton.setText("Search Patient");
         searchPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchPatientJButtonActionPerformed(evt);
             }
         });
+        add(searchPatientJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 80, -1, -1));
 
+        backJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         backJButton.setText("<<Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 310, 100, -1));
 
+        refreshJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshJButtonActionPerformed(evt);
             }
         });
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(439, 310, 109, -1));
 
+        createPatientJButton.setFont(new java.awt.Font("Gujarati MT", 1, 14)); // NOI18N
         createPatientJButton.setText("Create Patient");
         createPatientJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createPatientJButtonActionPerformed(evt);
             }
         });
+        add(createPatientJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 250, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(createPatientJButton)
-                            .addComponent(backJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(viewPatientJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(refreshJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(searchBoxJTextField)
-                            .addComponent(editPatientJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(searchPatientJButton)
-                            .addComponent(deletePatientJButton)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewPatientJButton)
-                    .addComponent(editPatientJButton)
-                    .addComponent(deletePatientJButton)
-                    .addComponent(createPatientJButton))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backJButton)
-                    .addComponent(refreshJButton)
-                    .addComponent(searchPatientJButton)
-                    .addComponent(searchBoxJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(451, Short.MAX_VALUE))
-        );
+        bgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ui/v870-tang-36.jpg"))); // NOI18N
+        add(bgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -210, 1690, 1200));
     }// </editor-fold>//GEN-END:initComponents
 
     private void viewPatientJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPatientJButtonActionPerformed
@@ -358,6 +336,7 @@ public class ManagePatientsJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton;
+    private javax.swing.JLabel bgLbl;
     private javax.swing.JButton createPatientJButton;
     private javax.swing.JButton deletePatientJButton;
     private javax.swing.JButton editPatientJButton;
