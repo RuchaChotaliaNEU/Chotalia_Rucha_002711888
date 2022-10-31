@@ -12,6 +12,11 @@ The scope of the assignment is :
 
 <img src="demo.jpg" width="600" height="300"/><br><br>
 
+<br>
+
+#Sequence Diagram
+
+<img src="dequencediag.jpeg" width="600" height="300"/><br><br>
 
 
 ## Required Tools
