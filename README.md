@@ -10,7 +10,7 @@ The scope of the assignment is :
 
 <br>
 
-<img src="demo.jpeg" width="600" height="300"/><br><br>
+<img src="demo.jpg" width="600" height="300"/><br><br>
 
 
 
